@@ -6,6 +6,8 @@
     <title>Embedded Control | Electrical & Embedded Control Systems Engineer</title>
     <meta name="description" content="Building intelligent control systems - RTOS, embedded firmware, control algorithms, and industrial automation.">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tools-section.css">
+    <link rel="stylesheet" href="nav-changes.css">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='bgGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%230a0e27;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%231a2448;stop-opacity:1' /%3E%3C/linearGradient%3E%3ClinearGradient id='ctrlGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2300d4ff;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%2300ff88;stop-opacity:1' /%3E%3C/linearGradient%3E%3Cfilter id='glow'%3E%3CfeGaussianBlur stdDeviation='1' result='coloredBlur'/%3E%3CfeMerge%3E%3CfeMergeNode in='coloredBlur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='32' fill='url(%23bgGrad)'/%3E%3Ccircle cx='18' cy='32' r='5' stroke='%2300d4ff' stroke-width='2' fill='none' filter='url(%23glow)'/%3E%3Cline x1='16' y1='32' x2='20' y2='32' stroke='%2300d4ff' stroke-width='1.5'/%3E%3Cline x1='18' y1='30' x2='18' y2='34' stroke='%2300d4ff' stroke-width='1.5'/%3E%3Crect x='28' y='26' width='14' height='12' fill='url(%23ctrlGrad)' filter='url(%23glow)'/%3E%3Ctext x='35' y='34' font-size='8' font-weight='bold' text-anchor='middle' fill='%230a0e27'%3EPID%3C/text%3E%3Crect x='48' y='28' width='10' height='8' stroke='%2300ff88' stroke-width='2' fill='none' filter='url(%23glow)'/%3E%3Cpath d='M 8 32 L 13 32' stroke='%2300d4ff' stroke-width='2' fill='none'/%3E%3Cpath d='M 13 32 L 11 30 M 13 32 L 11 34' stroke='%2300d4ff' stroke-width='1.5' fill='none'/%3E%3Cpath d='M 23 32 L 28 32' stroke='%2300d4ff' stroke-width='2' fill='none'/%3E%3Cpath d='M 42 32 L 48 32' stroke='%2300ff88' stroke-width='2' fill='none'/%3E%3Cpath d='M 58 32 L 60 32' stroke='%2300ff88' stroke-width='2' fill='none'/%3E%3Cpath d='M 58 32 L 58 45 L 18 45 L 18 37' stroke='%2300d4ff' stroke-width='1.5' fill='none' stroke-dasharray='2,1' opacity='0.8'/%3E%3Cpath d='M 18 37 L 16 39 M 18 37 L 20 39' stroke='%2300d4ff' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='8' cy='32' r='2' fill='%2300ff88'/%3E%3C/svg%3E">
 </head>
 <body>
@@ -16,41 +18,151 @@
         <div class="circuit-line"></div>
     </div>
 
-    <nav id="navbar">
-        <div class="logo">Embedded <span> Control</span> Systems</div>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
-            <span class="sun">☀️</span>
-            <span class="moon">🌙</span>
-        </button>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#profile">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li class="dropdown">
-                <a href="#books" class="dropdown-toggle">Books</a>
-                <div class="dropdown-menu">
-                    <a href="#fiction">Fiction</a>
-                    <a href="#nonfiction">Non-Fiction</a>
-                    <a href="#science">Science</a>
-                    <a href="#engineering">Engineering</a>
-                    <a href="#technology">Technology</a>
-                </div>
-            </li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#entrepreneurship">Ventures</a></li>
-            <li class="dropdown">
-                <a href="#resources" class="dropdown-toggle">Resources</a>
-                <div class="dropdown-menu">
-                    <a href="#engineering science">Engineering Science</a>
-                    <a href="#applied industrial electronics">Applied Industrial Electronics</a>
-                    <a href="#Cyber engineering">Cyber Physical Systems</a>
-                    <a href="#systems engineering">Systems Engineering</a>
-                    <a href="#technology">Technology</a>
-                </div>
-            </li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <!--
+════════════════════════════════════════════════════════════════
+  NAV CHANGES — index.html
+════════════════════════════════════════════════════════════════
+
+STEP 1 — Replace the ENTIRE <nav> block (lines 19–53) with the
+         block below. That's everything from <nav id="navbar">
+         to the closing </nav>.
+
+STEP 2 — On line 589, change the section heading:
+         FROM: <h2 class="section-title">Entrepreneurship & Ventures</h2>
+         TO:   <h2 class="section-title">Products & Services</h2>
+
+STEP 3 — Append nav-changes.css to the bottom of style.css
+         (or add <link rel="stylesheet" href="nav-changes.css">
+         in <head> after the existing stylesheet link).
+
+STEP 4 — In script.js, find the console.log lines at the bottom
+         and note: no JS changes required — the existing dropdown
+         hover behaviour in CSS handles everything.
+
+════════════════════════════════════════════════════════════════
+-->
+
+<!-- ═══════════════════════════════════════════════════════════
+     REPLACE lines 19–53 of index.html with this entire block
+     ═══════════════════════════════════════════════════════════ -->
+<nav id="navbar">
+    <div class="logo">Embedded <span>Control</span> Systems</div>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+    </button>
+    <ul class="nav-links">
+
+        <!-- Home -->
+        <li><a href="#home">Home</a></li>
+
+        <!-- About -->
+        <li><a href="#profile">About</a></li>
+
+        <!-- Projects -->
+        <li><a href="#projects">Projects</a></li>
+
+        <!-- Books (existing dropdown — unchanged) -->
+        <li class="dropdown">
+            <a href="#books" class="dropdown-toggle">Books</a>
+            <div class="dropdown-menu">
+                <a href="#fiction">Fiction</a>
+                <a href="#nonfiction">Non-Fiction</a>
+                <a href="#science">Science</a>
+                <a href="#engineering">Engineering</a>
+                <a href="#technology">Technology</a>
+            </div>
+        </li>
+
+        <!-- Products & Services (replaces "Ventures") -->
+        <li class="dropdown">
+            <a href="#entrepreneurship" class="dropdown-toggle">Products &amp; Services</a>
+            <div class="dropdown-menu dropdown-menu--wide">
+                <div class="dropdown-group-label">Products</div>
+                <a href="#firmware-kits" class="dropdown-item-icon">
+                    <span class="di-icon">⚡</span>
+                    <span class="di-text">
+                        <strong>Firmware Kits</strong>
+                        <em>Ready-to-deploy embedded packages</em>
+                    </span>
+                </a>
+                <a href="#iot-nodes" class="dropdown-item-icon">
+                    <span class="di-icon">📡</span>
+                    <span class="di-text">
+                        <strong>IoT Nodes</strong>
+                        <em>Hardware-ready sensor & control nodes</em>
+                    </span>
+                </a>
+                <a href="#tools" class="dropdown-item-icon">
+                    <span class="di-icon">🔬</span>
+                    <span class="di-text">
+                        <strong>Tools</strong>
+                        <em>Interactive engineering simulators</em>
+                    </span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <div class="dropdown-group-label">Services</div>
+                <a href="#micro-consulting" class="dropdown-item-icon">
+                    <span class="di-icon">🧠</span>
+                    <span class="di-text">
+                        <strong>Micro Consulting</strong>
+                        <em>Focused technical sessions, on demand</em>
+                    </span>
+                </a>
+            </div>
+        </li>
+
+        <!-- Content (replaces standalone "Blog") -->
+        <li class="dropdown">
+            <a href="#blog" class="dropdown-toggle">Content</a>
+            <div class="dropdown-menu dropdown-menu--wide">
+                <div class="dropdown-group-label">Publishing</div>
+                <a href="#blog" class="dropdown-item-icon">
+                    <span class="di-icon">✍️</span>
+                    <span class="di-text">
+                        <strong>Blog</strong>
+                        <em>Technical deep-dives & commentary</em>
+                    </span>
+                </a>
+                <a href="#engineering-writing" class="dropdown-item-icon">
+                    <span class="di-icon">📄</span>
+                    <span class="di-text">
+                        <strong>Engineering Writing</strong>
+                        <em>Long-form articles & whitepapers</em>
+                    </span>
+                </a>
+                <a href="#technical-guides" class="dropdown-item-icon">
+                    <span class="di-icon">📘</span>
+                    <span class="di-text">
+                        <strong>Technical Guides</strong>
+                        <em>Step-by-step implementation guides</em>
+                    </span>
+                </a>
+            </div>
+        </li>
+
+        <!-- Tools (direct link — scrolls to tools section) -->
+        <li><a href="#tools">Tools</a></li>
+        <!-- Resources (existing dropdown — unchanged) -->
+        <li class="dropdown">
+            <a href="#resources" class="dropdown-toggle">Resources</a>
+            <div class="dropdown-menu">
+                <a href="#engineering-science">Engineering Science</a>
+                <a href="#applied-industrial-electronics">Applied Industrial Electronics</a>
+                <a href="#cyber-engineering">Cyber Physical Systems</a>
+                <a href="#systems-engineering">Systems Engineering</a>
+                <a href="#technology">Technology</a>
+            </div>
+        </li>
+
+        <!-- Contact -->
+        <li><a href="#contact">Contact</a></li>
+
+    </ul>
+</nav>
+<!-- ═══════════════════════════════════════════════════════════
+     END NAV REPLACEMENT
+     ═══════════════════════════════════════════════════════════ -->
 
     <section class="hero" id="home">
         <div class="hero-content">
@@ -586,49 +698,172 @@ Beyond building, I believe in clarity. I break down complex engineering concepts
         </div>
     </section>
 
-    <section class="expertise-section" id="entrepreneurship">
-        <div class="expertise-container">
-            <h2 class="section-title">Entrepreneurship & Ventures</h2>
-            <div class="expertise-intro">
-                <p>Building technology companies from concept to market. I've founded and led multiple ventures, combining technical innovation with business strategy.</p>
+    ════════════════════════════════════════════════════════════════
+-->
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TOOLS SECTION — paste before #entrepreneurship section    -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="tools-section" id="tools">
+    <div>
+        <h2 class="section-title">Interactive Engineering Tools</h2>
+        <p class="section-subtitle">
+            Browser-based simulators built for practicing engineers.
+            No installation. No login. Open and start analyzing.
+        </p>
+
+        <div class="tools-grid">
+
+            <!-- ── TOOL CARD 1: Control Systems Lab ─────────── -->
+            <div class="tool-card">
+
+                <!-- Preview visual -->
+                <div class="tool-preview">
+                    <div class="tool-preview-tabs">
+                        <div class="tool-preview-tab active">01 Plant</div>
+                        <div class="tool-preview-tab">02 Step</div>
+                        <div class="tool-preview-tab">03 Bode</div>
+                        <div class="tool-preview-tab">04 Locus</div>
+                        <div class="tool-preview-tab">05 RTOS</div>
+                    </div>
+                    <!-- Animated oscilloscope trace SVG -->
+                    <div class="tool-preview-trace">
+                        <svg viewBox="0 0 400 180" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Dashed setpoint line -->
+                            <line x1="40" y1="75" x2="380" y2="75"
+                                stroke="rgba(0,255,136,0.3)" stroke-width="1"
+                                stroke-dasharray="6 4"/>
+                            <!-- Step response curve (y(t)) -->
+                            <path d="M40,155 L60,155 Q75,155 80,120 Q90,80 100,72 Q115,65 130,70 Q145,75 155,73 Q170,72 185,74 Q200,75 380,75"
+                                fill="none" stroke="#00ff88" stroke-width="2"
+                                opacity="0.9"/>
+                            <!-- Error trace (faint red) -->
+                            <path d="M40,75 L60,75 Q70,75 80,110 Q90,140 100,148 Q115,155 130,150 Q145,145 155,147 Q170,148 185,146 Q200,145 380,145"
+                                fill="none" stroke="rgba(255,77,106,0.45)" stroke-width="1.2"/>
+                            <!-- Control effort u(t) (blue, lower) -->
+                            <path d="M40,30 L60,30 Q65,28 70,22 Q80,10 95,14 Q110,18 130,20 Q160,22 380,24"
+                                fill="none" stroke="rgba(77,184,255,0.55)" stroke-width="1.2"/>
+                            <!-- Animated scan line -->
+                            <line x1="220" y1="8" x2="220" y2="172"
+                                stroke="rgba(0,255,136,0.08)" stroke-width="1">
+                                <animateTransform attributeName="transform" type="translate"
+                                    values="-180,0;180,0" dur="4s" repeatCount="indefinite"/>
+                            </line>
+                        </svg>
+                    </div>
+                    <div class="tool-version-badge">v4.0</div>
+                    <div class="tool-preview-dot"></div>
+                </div>
+
+                <!-- Card body -->
+                <div class="tool-body">
+                    <div class="tool-category">Control Systems · Embedded</div>
+                    <div class="tool-name">Embedded Control Systems Laboratory</div>
+                    <div class="tool-tagline">
+                        From arbitrary G(s) to RTOS jitter — all in one browser tab.
+                    </div>
+                    <p class="tool-description">
+                        A professional-grade interactive simulator covering the full
+                        embedded control stack. Define any plant via transfer function,
+                        state-space, or drag-and-drop pole placement. Analyze step
+                        response, Bode, Nyquist, and root locus. Then go deeper —
+                        simulate ADC quantization, transport delay, RTOS scheduling
+                        effects, timing jitter, and derivative noise amplification.
+                    </p>
+                    <div class="tool-features">
+                        <span class="tool-feature-tag">Draggable Pole-Zero</span>
+                        <span class="tool-feature-tag">ζ / ωn Grid</span>
+                        <span class="tool-feature-tag">Transport Delay</span>
+                        <span class="tool-feature-tag">RTOS Scheduler</span>
+                        <span class="tool-feature-tag">ADC Quantization</span>
+                        <span class="tool-feature-tag">Noise + D-term</span>
+                        <span class="tool-feature-tag">Discrete ZOH</span>
+                        <span class="tool-feature-tag">Root Locus Anim.</span>
+                        <span class="tool-feature-tag">PNG / GIF Export</span>
+                        <span class="tool-feature-tag">JSON Save/Load</span>
+                    </div>
+                    <a href="lab.html" target="_blank" class="tool-launch-btn">
+                        Launch Laboratory <span class="btn-arrow">→</span>
+                    </a>
+                </div>
+
+                <div class="tool-status-strip">
+                    <div class="tool-status-live">
+                        <div class="tool-status-dot"></div>
+                        Live · Free · No install
+                    </div>
+                    <span>14 panels · RK4 solver · ModvWorks</span>
+                </div>
             </div>
-            <div class="expertise-grid">
-                <div class="expertise-card">
-                    <span class="expertise-icon">🚀</span>
-                    <h3>Company Name</h3>
-                    <p><strong>Your Role (Year - Present)</strong></p>
-                    <p>Description of your venture, achievements, and impact. Include metrics, funding, team size, or notable milestones.</p>
-                    <ul>
-                        <li>Key achievement or metric</li>
-                        <li>Notable milestone or recognition</li>
-                        <li>Impact or customer results</li>
-                    </ul>
+
+            <!-- ── TOOL CARD 2: Coming Soon placeholder ──────── -->
+            <div class="tool-card">
+                <div class="tool-preview" style="background: linear-gradient(135deg, #0a0e27, #0d1535);">
+                    <div class="tool-preview-tabs">
+                        <div class="tool-preview-tab active">01 Upload CSV</div>
+                        <div class="tool-preview-tab">02 Identify</div>
+                        <div class="tool-preview-tab">03 Validate</div>
+                    </div>
+                    <div class="tool-preview-trace">
+                        <svg viewBox="0 0 400 180" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Scattered data points -->
+                            <circle cx="60" cy="130" r="3" fill="rgba(0,212,255,0.5)"/>
+                            <circle cx="80" cy="115" r="3" fill="rgba(0,212,255,0.5)"/>
+                            <circle cx="110" cy="95" r="3" fill="rgba(0,212,255,0.5)"/>
+                            <circle cx="140" cy="85" r="3" fill="rgba(0,212,255,0.5)"/>
+                            <circle cx="175" cy="80" r="3" fill="rgba(0,212,255,0.5)"/>
+                            <circle cx="210" cy="78" r="3" fill="rgba(0,212,255,0.5)"/>
+                            <circle cx="250" cy="77" r="3" fill="rgba(0,212,255,0.5)"/>
+                            <circle cx="290" cy="76" r="3" fill="rgba(0,212,255,0.5)"/>
+                            <circle cx="330" cy="75" r="3" fill="rgba(0,212,255,0.5)"/>
+                            <!-- Fitted curve -->
+                            <path d="M40,150 Q70,120 110,90 Q150,70 210,76 Q260,78 380,75"
+                                fill="none" stroke="rgba(255,184,48,0.6)" stroke-width="2" stroke-dasharray="6 3"/>
+                            <!-- Question mark overlay -->
+                            <text x="200" y="160" font-family="Courier New" font-size="11"
+                                fill="rgba(0,212,255,0.2)" text-anchor="middle">G(s) = ?</text>
+                        </svg>
+                    </div>
+                    <div class="tool-version-badge" style="color:var(--primary);border-color:rgba(0,212,255,0.25);background:rgba(0,212,255,0.06);">Soon</div>
                 </div>
-                <div class="expertise-card">
-                    <span class="expertise-icon">🔧</span>
-                    <h3>Another Venture</h3>
-                    <p><strong>Your Role (Year - Year)</strong></p>
-                    <p>Description of this venture and what you built or accomplished.</p>
-                    <ul>
-                        <li>Key achievement</li>
-                        <li>Notable outcome</li>
-                        <li>Lessons learned</li>
-                    </ul>
+
+                <div class="tool-body">
+                    <div class="tool-category" style="color:var(--primary)">System Identification</div>
+                    <div class="tool-name">Plant Identification Tool</div>
+                    <div class="tool-tagline">
+                        Upload time, input, output CSV — get G(s) back.
+                    </div>
+                    <p class="tool-description">
+                        Upload a CSV of measured time-domain data (input/output pairs)
+                        and the tool estimates your plant's transfer function automatically.
+                        Fits first-order, second-order, and higher-order models using
+                        frequency-domain least-squares. Validates the result against your
+                        data and exports the identified G(s) directly into the Control
+                        Systems Laboratory for closed-loop design.
+                    </p>
+                    <div class="tool-features">
+                        <span class="tool-feature-tag">CSV Upload</span>
+                        <span class="tool-feature-tag">TF Estimation</span>
+                        <span class="tool-feature-tag">Model Validation</span>
+                        <span class="tool-feature-tag">Export to Lab</span>
+                    </div>
+                    <a href="#" class="tool-launch-btn coming-soon">
+                        Coming Soon <span class="btn-arrow">⋯</span>
+                    </a>
                 </div>
-                <div class="expertise-card">
-                    <span class="expertise-icon">🌱</span>
-                    <h3>Third Venture</h3>
-                    <p><strong>Your Role (Year - Year)</strong></p>
-                    <p>Another venture description with outcomes and learnings.</p>
-                    <ul>
-                        <li>Achievement</li>
-                        <li>Impact</li>
-                        <li>Growth</li>
-                    </ul>
+
+                <div class="tool-status-strip">
+                    <span style="color:rgba(232,244,248,0.25)">In development</span>
+                    <span>ModvWorks · 2025</span>
                 </div>
             </div>
-        </div>
-    </section>
+
+        </div><!-- end .tools-grid -->
+    </div>
+</section>
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- END TOOLS SECTION                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->
 
     <section class="contact" id="contact">
         <h2 class="section-title">Let's Work Together</h2>
