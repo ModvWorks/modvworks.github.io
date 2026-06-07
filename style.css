@@ -1842,3 +1842,7 @@ body.light-mode .tools-section .section-subtitle {
         width: 100%;
     }
 }
+
+.nav-links .dropdown > a {
+    white-space: nowrap;
+}
