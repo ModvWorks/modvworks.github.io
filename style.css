@@ -1846,3 +1846,5 @@ body.light-mode .tools-section .section-subtitle {
 .nav-links .dropdown > a {
     white-space: nowrap;
 }
+
+.logo { white-space: nowrap; }
