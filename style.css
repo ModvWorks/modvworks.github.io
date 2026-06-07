@@ -1848,3 +1848,7 @@ body.light-mode .tools-section .section-subtitle {
 }
 
 .logo { white-space: nowrap; }
+
+.dropdown-menu--wide {
+    min-width: 320px;
+}
