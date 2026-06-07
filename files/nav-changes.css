@@ -1,0 +1,150 @@
+/* ============================================================
+   Nav Changes — append to the bottom of style.css
+   Adds wide dropdown, group labels, icon items, divider
+   ============================================================ */
+
+/* ── WIDE DROPDOWN ─────────────────────────────────────────── */
+.dropdown-menu--wide {
+    min-width: 280px;
+    padding: 0.75rem 0;
+}
+
+/* ── GROUP LABELS ───────────────────────────────────────────── */
+.dropdown-group-label {
+    font-family: 'Courier New', monospace;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding: 0.4rem 1.5rem 0.3rem;
+    opacity: 0.8;
+    pointer-events: none;
+    margin-top: 0.2rem;
+}
+
+/* ── DIVIDER ────────────────────────────────────────────────── */
+.dropdown-divider {
+    height: 1px;
+    background: rgba(0, 212, 255, 0.12);
+    margin: 0.5rem 1rem;
+}
+
+/* ── ICON DROPDOWN ITEMS ────────────────────────────────────── */
+.dropdown-item-icon {
+    display: flex !important;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.7rem 1.5rem !important;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: var(--light);
+}
+
+.dropdown-item-icon:hover {
+    background: rgba(0, 212, 255, 0.09) !important;
+    border-left-color: var(--primary) !important;
+    padding-left: 1.7rem !important;
+    color: var(--light) !important;
+}
+
+.di-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    width: 24px;
+    text-align: center;
+    line-height: 1;
+}
+
+.di-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    line-height: 1.2;
+}
+
+.di-text strong {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--light);
+    transition: color 0.2s ease;
+}
+
+.di-text em {
+    font-size: 0.75rem;
+    font-style: normal;
+    color: rgba(232, 244, 248, 0.45);
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.02em;
+}
+
+.dropdown-item-icon:hover .di-text strong {
+    color: var(--primary);
+}
+
+.dropdown-item-icon:hover .di-text em {
+    color: rgba(232, 244, 248, 0.6);
+}
+
+/* ── ACTIVE NAV STATE (highlight for current section) ───────── */
+.nav-links a.active {
+    color: var(--primary);
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* ── LIGHT MODE OVERRIDES ────────────────────────────────────── */
+body.light-mode .dropdown-group-label {
+    color: var(--accent);
+    opacity: 0.9;
+}
+
+body.light-mode .dropdown-divider {
+    background: rgba(0, 153, 255, 0.15);
+}
+
+body.light-mode .dropdown-item-icon {
+    color: #1a1f36;
+}
+
+body.light-mode .dropdown-item-icon:hover {
+    background: rgba(0, 153, 255, 0.08) !important;
+}
+
+body.light-mode .di-text strong {
+    color: #1a1f36;
+}
+
+body.light-mode .di-text em {
+    color: rgba(26, 31, 54, 0.45);
+}
+
+body.light-mode .dropdown-item-icon:hover .di-text strong {
+    color: var(--primary);
+}
+
+body.light-mode .dropdown-item-icon:hover .di-text em {
+    color: rgba(26, 31, 54, 0.65);
+}
+
+/* ── RESPONSIVE: collapse dropdowns on mobile ───────────────── */
+@media (max-width: 900px) {
+    .dropdown-menu--wide {
+        min-width: 240px;
+    }
+
+    .di-text em {
+        display: none; /* hide subtitles on small screens */
+    }
+
+    .dropdown-item-icon {
+        padding: 0.65rem 1.2rem !important;
+    }
+
+    .dropdown-item-icon:hover {
+        padding-left: 1.4rem !important;
+    }
+}

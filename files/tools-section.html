@@ -1,0 +1,196 @@
+<!--
+════════════════════════════════════════════════════════════════
+  INSERTION INSTRUCTIONS — index.html
+════════════════════════════════════════════════════════════════
+
+STEP 1 — NAV LINK
+  Find this line in the <ul class="nav-links"> block (around line 40):
+      <li><a href="#blog">Blog</a></li>
+  Insert the new item BEFORE it:
+
+      <li><a href="#tools">Tools</a></li>
+
+────────────────────────────────────────────────────────────────
+
+STEP 2 — TOOLS SECTION
+  Find this line (around line 589):
+      <section class="expertise-section" id="entrepreneurship">
+  Insert the entire block below IMMEDIATELY BEFORE it.
+
+────────────────────────────────────────────────────────────────
+
+STEP 3 — STYLESHEET LINK
+  In <head>, after:
+      <link rel="stylesheet" href="style.css">
+  Add:
+      <link rel="stylesheet" href="tools-section.css">
+
+  (Or append the contents of tools-section.css to the bottom
+   of style.css instead — either works.)
+
+════════════════════════════════════════════════════════════════
+-->
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TOOLS SECTION — paste before #entrepreneurship section    -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<section class="tools-section" id="tools">
+    <div>
+        <h2 class="section-title">Interactive Engineering Tools</h2>
+        <p class="section-subtitle">
+            Browser-based simulators built for practicing engineers.
+            No installation. No login. Open and start analyzing.
+        </p>
+
+        <div class="tools-grid">
+
+            <!-- ── TOOL CARD 1: Control Systems Lab ─────────── -->
+            <div class="tool-card">
+
+                <!-- Preview visual -->
+                <div class="tool-preview">
+                    <div class="tool-preview-tabs">
+                        <div class="tool-preview-tab active">01 Plant</div>
+                        <div class="tool-preview-tab">02 Step</div>
+                        <div class="tool-preview-tab">03 Bode</div>
+                        <div class="tool-preview-tab">04 Locus</div>
+                        <div class="tool-preview-tab">05 RTOS</div>
+                    </div>
+                    <!-- Animated oscilloscope trace SVG -->
+                    <div class="tool-preview-trace">
+                        <svg viewBox="0 0 400 180" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Dashed setpoint line -->
+                            <line x1="40" y1="75" x2="380" y2="75"
+                                stroke="rgba(0,255,136,0.3)" stroke-width="1"
+                                stroke-dasharray="6 4"/>
+                            <!-- Step response curve (y(t)) -->
+                            <path d="M40,155 L60,155 Q75,155 80,120 Q90,80 100,72 Q115,65 130,70 Q145,75 155,73 Q170,72 185,74 Q200,75 380,75"
+                                fill="none" stroke="#00ff88" stroke-width="2"
+                                opacity="0.9"/>
+                            <!-- Error trace (faint red) -->
+                            <path d="M40,75 L60,75 Q70,75 80,110 Q90,140 100,148 Q115,155 130,150 Q145,145 155,147 Q170,148 185,146 Q200,145 380,145"
+                                fill="none" stroke="rgba(255,77,106,0.45)" stroke-width="1.2"/>
+                            <!-- Control effort u(t) (blue, lower) -->
+                            <path d="M40,30 L60,30 Q65,28 70,22 Q80,10 95,14 Q110,18 130,20 Q160,22 380,24"
+                                fill="none" stroke="rgba(77,184,255,0.55)" stroke-width="1.2"/>
+                            <!-- Animated scan line -->
+                            <line x1="220" y1="8" x2="220" y2="172"
+                                stroke="rgba(0,255,136,0.08)" stroke-width="1">
+                                <animateTransform attributeName="transform" type="translate"
+                                    values="-180,0;180,0" dur="4s" repeatCount="indefinite"/>
+                            </line>
+                        </svg>
+                    </div>
+                    <div class="tool-version-badge">v4.0</div>
+                    <div class="tool-preview-dot"></div>
+                </div>
+
+                <!-- Card body -->
+                <div class="tool-body">
+                    <div class="tool-category">Control Systems · Embedded</div>
+                    <div class="tool-name">Embedded Control Systems Laboratory</div>
+                    <div class="tool-tagline">
+                        From arbitrary G(s) to RTOS jitter — all in one browser tab.
+                    </div>
+                    <p class="tool-description">
+                        A professional-grade interactive simulator covering the full
+                        embedded control stack. Define any plant via transfer function,
+                        state-space, or drag-and-drop pole placement. Analyze step
+                        response, Bode, Nyquist, and root locus. Then go deeper —
+                        simulate ADC quantization, transport delay, RTOS scheduling
+                        effects, timing jitter, and derivative noise amplification.
+                    </p>
+                    <div class="tool-features">
+                        <span class="tool-feature-tag">Draggable Pole-Zero</span>
+                        <span class="tool-feature-tag">ζ / ωn Grid</span>
+                        <span class="tool-feature-tag">Transport Delay</span>
+                        <span class="tool-feature-tag">RTOS Scheduler</span>
+                        <span class="tool-feature-tag">ADC Quantization</span>
+                        <span class="tool-feature-tag">Noise + D-term</span>
+                        <span class="tool-feature-tag">Discrete ZOH</span>
+                        <span class="tool-feature-tag">Root Locus Anim.</span>
+                        <span class="tool-feature-tag">PNG / GIF Export</span>
+                        <span class="tool-feature-tag">JSON Save/Load</span>
+                    </div>
+                    <a href="lab.html" target="_blank" class="tool-launch-btn">
+                        Launch Laboratory <span class="btn-arrow">→</span>
+                    </a>
+                </div>
+
+                <div class="tool-status-strip">
+                    <div class="tool-status-live">
+                        <div class="tool-status-dot"></div>
+                        Live · Free · No install
+                    </div>
+                    <span>14 panels · RK4 solver · ModvWorks</span>
+                </div>
+            </div>
+
+            <!-- ── TOOL CARD 2: Coming Soon placeholder ──────── -->
+            <div class="tool-card">
+                <div class="tool-preview" style="background: linear-gradient(135deg, #0a0e27, #0d1535);">
+                    <div class="tool-preview-tabs">
+                        <div class="tool-preview-tab active">01 Upload CSV</div>
+                        <div class="tool-preview-tab">02 Identify</div>
+                        <div class="tool-preview-tab">03 Validate</div>
+                    </div>
+                    <div class="tool-preview-trace">
+                        <svg viewBox="0 0 400 180" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Scattered data points -->
+                            <circle cx="60" cy="130" r="3" fill="rgba(0,212,255,0.5)"/>
+                            <circle cx="80" cy="115" r="3" fill="rgba(0,212,255,0.5)"/>
+                            <circle cx="110" cy="95" r="3" fill="rgba(0,212,255,0.5)"/>
+                            <circle cx="140" cy="85" r="3" fill="rgba(0,212,255,0.5)"/>
+                            <circle cx="175" cy="80" r="3" fill="rgba(0,212,255,0.5)"/>
+                            <circle cx="210" cy="78" r="3" fill="rgba(0,212,255,0.5)"/>
+                            <circle cx="250" cy="77" r="3" fill="rgba(0,212,255,0.5)"/>
+                            <circle cx="290" cy="76" r="3" fill="rgba(0,212,255,0.5)"/>
+                            <circle cx="330" cy="75" r="3" fill="rgba(0,212,255,0.5)"/>
+                            <!-- Fitted curve -->
+                            <path d="M40,150 Q70,120 110,90 Q150,70 210,76 Q260,78 380,75"
+                                fill="none" stroke="rgba(255,184,48,0.6)" stroke-width="2" stroke-dasharray="6 3"/>
+                            <!-- Question mark overlay -->
+                            <text x="200" y="160" font-family="Courier New" font-size="11"
+                                fill="rgba(0,212,255,0.2)" text-anchor="middle">G(s) = ?</text>
+                        </svg>
+                    </div>
+                    <div class="tool-version-badge" style="color:var(--primary);border-color:rgba(0,212,255,0.25);background:rgba(0,212,255,0.06);">Soon</div>
+                </div>
+
+                <div class="tool-body">
+                    <div class="tool-category" style="color:var(--primary)">System Identification</div>
+                    <div class="tool-name">Plant Identification Tool</div>
+                    <div class="tool-tagline">
+                        Upload time, input, output CSV — get G(s) back.
+                    </div>
+                    <p class="tool-description">
+                        Upload a CSV of measured time-domain data (input/output pairs)
+                        and the tool estimates your plant's transfer function automatically.
+                        Fits first-order, second-order, and higher-order models using
+                        frequency-domain least-squares. Validates the result against your
+                        data and exports the identified G(s) directly into the Control
+                        Systems Laboratory for closed-loop design.
+                    </p>
+                    <div class="tool-features">
+                        <span class="tool-feature-tag">CSV Upload</span>
+                        <span class="tool-feature-tag">TF Estimation</span>
+                        <span class="tool-feature-tag">Model Validation</span>
+                        <span class="tool-feature-tag">Export to Lab</span>
+                    </div>
+                    <a href="#" class="tool-launch-btn coming-soon">
+                        Coming Soon <span class="btn-arrow">⋯</span>
+                    </a>
+                </div>
+
+                <div class="tool-status-strip">
+                    <span style="color:rgba(232,244,248,0.25)">In development</span>
+                    <span>ModvWorks · 2025</span>
+                </div>
+            </div>
+
+        </div><!-- end .tools-grid -->
+    </div>
+</section>
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- END TOOLS SECTION                                         -->
+<!-- ══════════════════════════════════════════════════════════ -->

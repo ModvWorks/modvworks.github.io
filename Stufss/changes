@@ -1,0 +1,85 @@
+<nav id="navbar">
+        <div class="logo">Embedded <span> Control</span> Systems</div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+            <span class="sun">☀️</span>
+            <span class="moon">🌙</span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#profile">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li class="dropdown">
+                <a href="#books" class="dropdown-toggle">Books</a>
+                <div class="dropdown-menu">
+                    <a href="#fiction">Fiction</a>
+                    <a href="#nonfiction">Non-Fiction</a>
+                    <a href="#science">Science</a>
+                    <a href="#engineering">Engineering</a>
+                    <a href="#technology">Technology</a>
+                </div>
+            </li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#entrepreneurship">Ventures</a></li>
+            <li class="dropdown">
+                <a href="#resources" class="dropdown-toggle">Resources</a>
+                <div class="dropdown-menu">
+                    <a href="#engineering science">Engineering Science</a>
+                    <a href="#applied industrial electronics">Applied Industrial Electronics</a>
+                    <a href="#Cyber engineering">Cyber Physical Systems</a>
+                    <a href="#systems engineering">Systems Engineering</a>
+                    <a href="#technology">Technology</a>
+                </div>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    
+    
+    -------------------------------------------------------------------------------------
+    
+    
+    
+    <section class="expertise-section" id="entrepreneurship">
+        <div class="expertise-container">
+            <h2 class="section-title">Products & Services</h2>
+            <div class="expertise-intro">
+                <p>Building technology companies from concept to market. I've founded and led multiple ventures, combining technical innovation with business strategy.</p>
+            </div>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <span class="expertise-icon">🚀</span>
+                    <h3>Company Name</h3>
+                    <p><strong>Your Role (Year - Present)</strong></p>
+                    <p>Description of your venture, achievements, and impact. Include metrics, funding, team size, or notable milestones.</p>
+                    <ul>
+                        <li>Key achievement or metric</li>
+                        <li>Notable milestone or recognition</li>
+                        <li>Impact or customer results</li>
+                    </ul>
+                </div>
+                <div class="expertise-card">
+                    <span class="expertise-icon">🔧</span>
+                    <h3>Another Venture</h3>
+                    <p><strong>Your Role (Year - Year)</strong></p>
+                    <p>Description of this venture and what you built or accomplished.</p>
+                    <ul>
+                        <li>Key achievement</li>
+                        <li>Notable outcome</li>
+                        <li>Lessons learned</li>
+                    </ul>
+                </div>
+                <div class="expertise-card">
+                    <span class="expertise-icon">🌱</span>
+                    <h3>Third Venture</h3>
+                    <p><strong>Your Role (Year - Year)</strong></p>
+                    <p>Another venture description with outcomes and learnings.</p>
+                    <ul>
+                        <li>Achievement</li>
+                        <li>Impact</li>
+                        <li>Growth</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
