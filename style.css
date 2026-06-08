@@ -1855,3 +1855,6 @@ body.light-mode .tools-section .section-subtitle {
 
 .dropdown-menu--wide { min-width: 320px; }
 .di-text strong, .di-text em { display: inline; }
+
+@import url('hybrid-theme.css');
+
