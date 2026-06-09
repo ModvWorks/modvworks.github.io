@@ -1,0 +1,294 @@
+/*
+ * ============================================================
+ *  ModvWorks / EmbeddedCtrl — Hybrid Engineering Theme
+ *  "Engineering Dark" override
+ *
+ *  HOW TO APPLY
+ *  Add one line at the very bottom of style.css:
+ *
+ *    @import url('hybrid-theme.css');
+ *
+ *  OR paste the entire contents of this file at the
+ *  bottom of style.css directly.
+ *
+ *  WHAT THIS CHANGES
+ *  ─ Nav, Hero (#home), Footer, Tools section → unchanged (stay dark)
+ *  ─ All content sections (Projects, Profile, Books, Blog, Contact)
+ *    → light background, dark readable text
+ *  ─ Accent color (#00c8ff) → unchanged everywhere
+ *  ─ Zero layout changes — only color/background/border values
+ * ============================================================
+ */
+
+/* ── 1. CSS Variable Overrides ─────────────────────────────
+   These redefine the core palette for content zones.
+   Adjust hex values here if your style.css uses different names.
+   ──────────────────────────────────────────────────────────── */
+:root {
+  --eng-bg:           #f4f7fb;   /* page/section background     */
+  --eng-surface:      #ffffff;   /* card / panel surface        */
+  --eng-surface-2:    #eef3f8;   /* secondary surface / alt row */
+  --eng-border:       #d0dcea;   /* card borders, dividers      */
+  --eng-border-soft:  #e2eaf4;   /* subtle separators           */
+  --eng-text-primary: #16202a;   /* headings, strong text       */
+  --eng-text-body:    #2d3d4f;   /* body / paragraph text       */
+  --eng-text-muted:   #5b6773;   /* meta, captions, timestamps  */
+  --eng-accent:       #00c8ff;   /* keep your signature cyan    */
+  --eng-accent-dim:   #0099cc;   /* accent on light bg (darker) */
+  --eng-tag-bg:       #e6f4fb;   /* tag/badge fill on light bg  */
+  --eng-tag-text:     #005f80;   /* tag/badge text              */
+  --eng-success:      #00875a;   /* green accent (dark on light)*/
+}
+
+
+/* ── 2. Content Section Backgrounds ───────────────────────── */
+
+/* Projects, Profile/About, Books, Blog */
+#projects,
+#profile,
+#books,
+#blog,
+#engineering-writing,
+#technical-guides,
+#resources,
+#engineering-science,
+#applied-industrial-electronics,
+#cyber-engineering,
+#systems-engineering {
+  background: var(--eng-bg) !important;
+}
+
+/* Contact section — keep slightly lighter than content */
+#contact {
+  background: var(--eng-surface-2) !important;
+  border-top: 3px solid var(--eng-accent);
+}
+
+
+/* ── 3. Headings & Body Text in Content Sections ─────────── */
+
+#projects h1, #projects h2, #projects h3, #projects h4,
+#profile  h1, #profile  h2, #profile  h3, #profile  h4,
+#books    h1, #books    h2, #books    h3, #books    h4,
+#blog     h1, #blog     h2, #blog     h3, #blog     h4,
+#contact  h1, #contact  h2, #contact  h3, #contact  h4,
+#resources h1, #resources h2, #resources h3 {
+  color: var(--eng-text-primary) !important;
+}
+
+#projects p, #projects li, #projects span,
+#profile  p, #profile  li, #profile  span,
+#books    p, #books    li, #books    span,
+#blog     p, #blog     li, #blog     span,
+#contact  p, #contact  li, #contact  span,
+#resources p, #resources li {
+  color: var(--eng-text-body) !important;
+}
+
+
+/* ── 4. Cards & Panels ────────────────────────────────────── */
+
+/* Project cards */
+#projects .project-card,
+#projects [class*="card"],
+#projects article {
+  background:    var(--eng-surface)  !important;
+  border:        1px solid var(--eng-border) !important;
+  border-radius: 8px !important;
+  box-shadow:    0 1px 4px rgba(0,0,0,0.06) !important;
+}
+
+/* Project card headings */
+#projects .project-card h3,
+#projects [class*="card"] h3 {
+  color: var(--eng-text-primary) !important;
+}
+
+/* Project card body text */
+#projects .project-card p,
+#projects .project-card li,
+#projects [class*="card"] p,
+#projects [class*="card"] li {
+  color: var(--eng-text-body) !important;
+}
+
+/* Blog post cards */
+#blog .blog-card,
+#blog [class*="card"],
+#blog article {
+  background:    var(--eng-surface) !important;
+  border:        1px solid var(--eng-border) !important;
+  border-radius: 8px !important;
+  box-shadow:    0 1px 4px rgba(0,0,0,0.06) !important;
+}
+
+/* Book cards */
+#books .book-card,
+#books [class*="card"] {
+  background:    var(--eng-surface) !important;
+  border:        1px solid var(--eng-border) !important;
+  border-radius: 8px !important;
+}
+
+/* Profile/About panels */
+#profile .profile-card,
+#profile [class*="card"],
+#profile [class*="panel"],
+#profile [class*="box"] {
+  background:    var(--eng-surface) !important;
+  border:        1px solid var(--eng-border) !important;
+  border-radius: 8px !important;
+}
+
+
+/* ── 5. Tags / Badges / Pills ─────────────────────────────── */
+
+/* Tech stack tags on project cards */
+#projects .tag,
+#projects [class*="tag"],
+#projects [class*="badge"],
+#projects [class*="pill"],
+#blog     .tag,
+#blog     [class*="tag"],
+#blog     [class*="badge"] {
+  background:    var(--eng-tag-bg)   !important;
+  color:         var(--eng-tag-text) !important;
+  border:        1px solid #b3d8ec   !important;
+}
+
+/* Keep RTOS / Control Systems category labels readable */
+#projects [class*="category"],
+#blog     [class*="category"] {
+  color: var(--eng-accent-dim) !important;
+}
+
+
+/* ── 6. Timestamps, Meta, Read-time ──────────────────────── */
+
+#blog [class*="date"],
+#blog [class*="meta"],
+#blog [class*="time"],
+#blog time {
+  color: var(--eng-text-muted) !important;
+}
+
+
+/* ── 7. Filter Buttons (Projects section) ─────────────────── */
+
+#projects [class*="filter"] button,
+#projects [class*="filter"] a {
+  background:    var(--eng-surface-2) !important;
+  color:         var(--eng-text-body) !important;
+  border:        1px solid var(--eng-border) !important;
+}
+
+#projects [class*="filter"] button:hover,
+#projects [class*="filter"] button.active {
+  background:    var(--eng-accent)   !important;
+  color:         #0b1e36             !important;
+  border-color:  var(--eng-accent)   !important;
+}
+
+
+/* ── 8. Accent Color on Light Background ─────────────────── */
+/* On light bg, full #00c8ff is too pale — use slightly darker */
+
+#projects a,
+#profile  a,
+#books    a,
+#blog     a,
+#contact  a {
+  color: var(--eng-accent-dim) !important;
+}
+
+#projects a:hover,
+#profile  a:hover,
+#blog     a:hover {
+  color: var(--eng-accent) !important;
+}
+
+
+/* ── 9. Section Dividers & Borders ───────────────────────── */
+
+#projects,
+#profile,
+#books,
+#blog {
+  border-top: 1px solid var(--eng-border-soft) !important;
+}
+
+
+/* ── 10. Contact Form Inputs ─────────────────────────────── */
+
+#contact input,
+#contact textarea,
+#contact select {
+  background:    var(--eng-surface)  !important;
+  border:        1px solid var(--eng-border) !important;
+  color:         var(--eng-text-primary) !important;
+  border-radius: 6px !important;
+}
+
+#contact input::placeholder,
+#contact textarea::placeholder {
+  color: var(--eng-text-muted) !important;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  border-color: var(--eng-accent) !important;
+  outline:      none !important;
+  box-shadow:   0 0 0 3px rgba(0,200,255,0.15) !important;
+}
+
+
+/* ── 11. Contact Info Blocks ─────────────────────────────── */
+
+#contact [class*="info"],
+#contact [class*="detail"],
+#contact [class*="item"] {
+  color: var(--eng-text-body) !important;
+}
+
+#contact strong,
+#contact b {
+  color: var(--eng-text-primary) !important;
+}
+
+
+/* ── 12. Hero Bottom Border (anchors dark→light transition) ─ */
+/* Adds a 3px cyan line under the hero to signal the shift      */
+
+#home {
+  border-bottom: 3px solid var(--eng-accent) !important;
+}
+
+
+/* ── 13. Tools Section — keep dark, reinforce border ─────── */
+/* The interactive lab section stays in your dark theme         */
+
+section.tools,
+#tools,
+[id*="tools"],
+[class*="tools-section"] {
+  border-top:    3px solid var(--eng-accent) !important;
+  border-bottom: 3px solid var(--eng-accent) !important;
+}
+
+
+/* ── 14. Scrollbar (content zones, Webkit) ───────────────── */
+
+#projects::-webkit-scrollbar-track,
+#blog::-webkit-scrollbar-track {
+  background: var(--eng-bg);
+}
+
+
+/* ── 15. Print-safe fallback ─────────────────────────────── */
+
+@media print {
+  #projects, #profile, #books, #blog, #contact {
+    background: white !important;
+    color: black !important;
+  }
+}
