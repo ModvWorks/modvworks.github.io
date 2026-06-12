@@ -358,7 +358,7 @@ body.light-mode .theme-toggle {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem 5%;
+    padding: 6rem 5% 2rem;
     position: relative;
 }
 
