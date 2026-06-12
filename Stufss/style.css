@@ -176,7 +176,7 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 1.2rem 3%;
+    padding: 1.2rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -185,7 +185,7 @@ nav {
     backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(0, 212, 255, 0.2);
     transition: all 0.3s ease;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
 nav.scrolled {
@@ -249,7 +249,7 @@ body.light-mode .theme-toggle {
 
 .nav-links {
     display: flex;
-    gap: 0.85rem;
+    gap: 1.2rem;
     list-style: none;
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -351,6 +351,162 @@ body.light-mode .theme-toggle {
     padding-left: 2rem;
 }
 
+/* ============================================
+   Mega Menu (Siemens-style: sidebar + content)
+   ============================================ */
+.mega {
+    position: relative;
+}
+
+.mega-menu {
+    position: fixed;
+    top: var(--nav-height, 72px);
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    background: rgba(10, 14, 39, 0.98);
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(0, 212, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    z-index: 999;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.mega:hover .mega-menu,
+.mega-menu:hover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mega-sidebar {
+    flex: 0 0 240px;
+    padding: 2rem 1.5rem;
+    border-right: 1px solid rgba(0, 212, 255, 0.15);
+}
+
+.mega-sidebar-item {
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    color: var(--light);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.mega-sidebar-item.active,
+.mega-sidebar-item:hover {
+    background: rgba(0, 212, 255, 0.08);
+    color: var(--primary);
+    border-left-color: var(--primary);
+}
+
+.mega-content {
+    flex: 1;
+    display: flex;
+    gap: 2.5rem;
+    padding: 2rem 2.5rem;
+    flex-wrap: wrap;
+}
+
+.mega-column {
+    flex: 1 1 280px;
+    min-width: 240px;
+}
+
+.mega-column-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.mega-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    padding: 0.75rem 0.5rem;
+    border-radius: 8px;
+    color: var(--light);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.mega-item:hover {
+    background: rgba(0, 212, 255, 0.08);
+    border-left-color: var(--primary);
+    padding-left: 1rem;
+}
+
+.mega-item-icon {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    flex-shrink: 0;
+}
+
+.mega-item-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.mega-item-text strong {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--light);
+}
+
+.mega-item:hover .mega-item-text strong {
+    color: var(--primary);
+}
+
+.mega-item-desc {
+    font-size: 0.8rem;
+    color: rgba(232, 244, 248, 0.6);
+    line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+    .mega-menu {
+        position: static;
+        flex-direction: column;
+        max-height: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        box-shadow: none;
+    }
+
+    .mega:hover .mega-menu {
+        display: flex;
+    }
+
+    .mega-sidebar {
+        flex: none;
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 212, 255, 0.15);
+    }
+
+    .mega-content {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+}
 
 /* Hero Section */
 .hero {
@@ -1852,854 +2008,12 @@ body.light-mode .tools-section .section-subtitle {
 
 .logo { white-space: nowrap; }
 
-
-
-/* ============================================================
-   Nav Changes — merged from nav-changes.css
-   ============================================================ */
-/* ============================================================
-   Nav Changes — append to the bottom of style.css
-   Adds wide dropdown, group labels, icon items, divider
-   ============================================================ */
-
-/* ── WIDE DROPDOWN ─────────────────────────────────────────── */
 .dropdown-menu--wide {
-    min-width: 280px;
-    padding: 0.75rem 0;
+    min-width: 320px;
 }
 
-/* ── GROUP LABELS ───────────────────────────────────────────── */
-.dropdown-group-label {
-    font-family: 'Courier New', monospace;
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-    padding: 0.4rem 1.5rem 0.3rem;
-    opacity: 0.8;
-    pointer-events: none;
-    margin-top: 0.2rem;
-}
-
-/* ── DIVIDER ────────────────────────────────────────────────── */
-.dropdown-divider {
-    height: 1px;
-    background: rgba(0, 212, 255, 0.12);
-    margin: 0.5rem 1rem;
-}
-
-/* ── ICON DROPDOWN ITEMS ────────────────────────────────────── */
-.dropdown-item-icon {
-    display: flex !important;
-    align-items: center;
-    gap: 0.85rem;
-    padding: 0.7rem 1.5rem !important;
-    border-left: 3px solid transparent;
-    transition: all 0.2s ease;
-    text-decoration: none;
-    color: var(--light);
-}
-
-.dropdown-item-icon:hover {
-    background: rgba(0, 212, 255, 0.09) !important;
-    border-left-color: var(--primary) !important;
-    padding-left: 1.7rem !important;
-    color: var(--light) !important;
-}
-
-.di-icon {
-    font-size: 1.2rem;
-    flex-shrink: 0;
-    width: 24px;
-    text-align: center;
-    line-height: 1;
-}
-
-.di-text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.1rem;
-    line-height: 1.2;
-}
-
-.di-text strong {
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--light);
-    transition: color 0.2s ease;
-}
-
-.di-text em {
-    font-size: 0.75rem;
-    font-style: normal;
-    color: rgba(232, 244, 248, 0.45);
-    font-family: 'Courier New', monospace;
-    letter-spacing: 0.02em;
-}
-
-.dropdown-item-icon:hover .di-text strong {
-    color: var(--primary);
-}
-
-.dropdown-item-icon:hover .di-text em {
-    color: rgba(232, 244, 248, 0.6);
-}
-
-/* ── ACTIVE NAV STATE (highlight for current section) ───────── */
-.nav-links a.active {
-    color: var(--primary);
-}
-
-.nav-links a.active::after {
-    width: 100%;
-}
-
-/* ── LIGHT MODE OVERRIDES ────────────────────────────────────── */
-body.light-mode .dropdown-group-label {
-    color: var(--accent);
-    opacity: 0.9;
-}
-
-body.light-mode .dropdown-divider {
-    background: rgba(0, 153, 255, 0.15);
-}
-
-body.light-mode .dropdown-item-icon {
-    color: #1a1f36;
-}
-
-body.light-mode .dropdown-item-icon:hover {
-    background: rgba(0, 153, 255, 0.08) !important;
-}
-
-body.light-mode .di-text strong {
-    color: #1a1f36;
-}
-
-body.light-mode .di-text em {
-    color: rgba(26, 31, 54, 0.45);
-}
-
-body.light-mode .dropdown-item-icon:hover .di-text strong {
-    color: var(--primary);
-}
-
-body.light-mode .dropdown-item-icon:hover .di-text em {
-    color: rgba(26, 31, 54, 0.65);
-}
-
-/* ── RESPONSIVE: collapse dropdowns on mobile ───────────────── */
-@media (max-width: 900px) {
-    .dropdown-menu--wide {
-        min-width: 240px;
-    }
-
-    .di-text em {
-        display: none; /* hide subtitles on small screens */
-    }
-
-    .dropdown-item-icon {
-        padding: 0.65rem 1.2rem !important;
-    }
-
-    .dropdown-item-icon:hover {
-        padding-left: 1.4rem !important;
-    }
-}
-
-/* ============================================================
-   Tools Section — merged from tools-section.css
-   ============================================================ */
-/* ========================================
-   Tools Section — ModvWorks Lab
-   Append to the bottom of style.css
-   ======================================== */
-
-/* ── SECTION WRAPPER ──────────────────── */
-.tools-section {
-    padding: 6rem 5%;
-    position: relative;
-}
-
-.tools-section .section-title {
-    text-align: center;
-    font-size: clamp(2rem, 4vw, 2.8rem);
-    font-weight: 800;
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.tools-section .section-title.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.tools-section .section-subtitle {
-    text-align: center;
-    color: rgba(232, 244, 248, 0.65);
-    font-size: 1.05rem;
-    max-width: 640px;
-    margin: 0 auto 3.5rem auto;
-    line-height: 1.75;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s;
-}
-
-.tools-section .section-subtitle.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* ── TOOLS GRID ────────────────────────── */
-.tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* ── TOOL CARD ─────────────────────────── */
-.tool-card {
-    background: rgba(20, 27, 61, 0.45);
-    border: 1px solid rgba(0, 212, 255, 0.18);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: all 0.35s ease;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    opacity: 0;
-    transform: translateY(40px);
-    backdrop-filter: blur(8px);
-}
-
-.tool-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.tool-card:hover {
-    border-color: var(--primary);
-    transform: translateY(-6px);
-    box-shadow:
-        0 20px 60px rgba(0, 212, 255, 0.12),
-        0 0 0 1px rgba(0, 212, 255, 0.1) inset;
-}
-
-/* ── CARD PREVIEW (top visual) ─────────── */
-.tool-preview {
-    position: relative;
-    height: 180px;
-    background: linear-gradient(135deg, #0a0e27 0%, #0d1535 50%, #0a1428 100%);
-    overflow: hidden;
-    border-bottom: 1px solid rgba(0, 212, 255, 0.15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Oscilloscope grid pattern */
-.tool-preview::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(0, 212, 255, 0.04) 28px, rgba(0, 212, 255, 0.04) 29px),
-        repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(0, 212, 255, 0.04) 28px, rgba(0, 212, 255, 0.04) 29px);
-    pointer-events: none;
-}
-
-/* Animated scope trace */
-.tool-preview-trace {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
-
-.tool-preview-trace svg {
-    width: 100%;
-    height: 100%;
-}
-
-/* Glow dot */
-.tool-preview-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 12px var(--accent), 0 0 24px rgba(0, 255, 136, 0.4);
-    animation: dot-blink 2.2s ease-in-out infinite;
-    z-index: 2;
-}
-
-@keyframes dot-blink {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(0.7); }
-}
-
-/* Tab strip inside preview */
-.tool-preview-tabs {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    gap: 0;
-    background: rgba(10, 14, 39, 0.8);
-    border-bottom: 1px solid rgba(0, 212, 255, 0.12);
-    padding: 0 8px;
-}
-
-.tool-preview-tab {
-    font-family: 'Courier New', monospace;
-    font-size: 8px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(0, 212, 255, 0.4);
-    padding: 5px 8px;
-    border-bottom: 2px solid transparent;
-}
-
-.tool-preview-tab.active {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
-}
-
-/* Version badge on preview */
-.tool-version-badge {
-    position: absolute;
-    top: 32px;
-    right: 10px;
-    font-family: 'Courier New', monospace;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    color: var(--accent);
-    background: rgba(0, 255, 136, 0.08);
-    border: 1px solid rgba(0, 255, 136, 0.25);
-    border-radius: 4px;
-    padding: 2px 7px;
-}
-
-/* ── CARD BODY ──────────────────────────── */
-.tool-body {
-    padding: 1.6rem 1.8rem;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.tool-category {
-    font-family: 'Courier New', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--accent);
-    font-weight: 700;
-    margin-bottom: 0.6rem;
-}
-
-.tool-name {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--light);
-    margin-bottom: 0.4rem;
-    line-height: 1.3;
-}
-
-.tool-tagline {
-    font-size: 0.88rem;
-    color: rgba(232, 244, 248, 0.55);
-    font-style: italic;
-    margin-bottom: 1rem;
-    line-height: 1.5;
-}
-
-.tool-description {
-    color: rgba(232, 244, 248, 0.75);
-    font-size: 0.92rem;
-    line-height: 1.75;
-    margin-bottom: 1.4rem;
-    flex: 1;
-}
-
-/* ── FEATURE TAGS ───────────────────────── */
-.tool-features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.tool-feature-tag {
-    font-family: 'Courier New', monospace;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    background: rgba(0, 212, 255, 0.07);
-    border: 1px solid rgba(0, 212, 255, 0.22);
-    color: var(--primary);
-    transition: all 0.2s ease;
-}
-
-.tool-feature-tag:hover {
-    background: rgba(0, 212, 255, 0.14);
-    border-color: var(--primary);
-}
-
-/* ── LAUNCH BUTTON ──────────────────────── */
-.tool-launch-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    padding: 0.85rem 1.6rem;
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.12), rgba(0, 255, 136, 0.08));
-    border: 1px solid rgba(0, 212, 255, 0.4);
-    border-radius: 8px;
-    color: var(--primary);
-    font-size: 0.88rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.25s ease;
-    font-family: 'Courier New', monospace;
-    cursor: pointer;
-    width: 100%;
-}
-
-.tool-launch-btn:hover {
-    background: linear-gradient(135deg, rgba(0, 212, 255, 0.22), rgba(0, 255, 136, 0.14));
-    border-color: var(--accent);
-    color: var(--accent);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0, 212, 255, 0.18);
-    gap: 1rem;
-}
-
-.tool-launch-btn .btn-arrow {
-    transition: transform 0.25s ease;
-    font-size: 1rem;
-}
-
-.tool-launch-btn:hover .btn-arrow {
-    transform: translateX(4px);
-}
-
-/* Coming soon state */
-.tool-launch-btn.coming-soon {
-    opacity: 0.45;
-    cursor: default;
-    pointer-events: none;
-    border-color: rgba(232, 244, 248, 0.15);
-    color: rgba(232, 244, 248, 0.35);
-}
-
-/* ── CARD STATUS STRIP ──────────────────── */
-.tool-status-strip {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.5rem 1.8rem;
-    background: rgba(10, 14, 39, 0.4);
-    border-top: 1px solid rgba(0, 212, 255, 0.1);
-    font-family: 'Courier New', monospace;
-    font-size: 0.72rem;
-    color: rgba(232, 244, 248, 0.35);
-    letter-spacing: 0.06em;
-}
+.dropdown-menu--wide { min-width: 320px; }
+.di-text strong, .di-text em { display: inline; }
 
-.tool-status-live {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: var(--accent);
-}
-
-.tool-status-dot {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: var(--accent);
-    box-shadow: 0 0 6px var(--accent);
-    animation: dot-blink 2s ease-in-out infinite;
-}
-
-/* ── LIGHT MODE OVERRIDES ───────────────── */
-body.light-mode .tool-card {
-    background: rgba(255, 255, 255, 0.88);
-    border-color: rgba(0, 153, 255, 0.22);
-}
-
-body.light-mode .tool-card:hover {
-    border-color: var(--primary);
-    box-shadow: 0 20px 60px rgba(0, 153, 255, 0.12);
-}
-
-body.light-mode .tool-preview {
-    background: linear-gradient(135deg, #1a2535 0%, #0d1a2e 100%);
-}
-
-body.light-mode .tool-name {
-    color: #1a1f36;
-}
-
-body.light-mode .tool-description {
-    color: rgba(26, 31, 54, 0.75);
-}
-
-body.light-mode .tool-tagline {
-    color: rgba(26, 31, 54, 0.5);
-}
-
-body.light-mode .tool-feature-tag {
-    background: rgba(0, 153, 255, 0.07);
-    border-color: rgba(0, 153, 255, 0.25);
-    color: var(--primary);
-}
-
-body.light-mode .tool-launch-btn {
-    background: linear-gradient(135deg, rgba(0, 153, 255, 0.1), rgba(0, 204, 102, 0.07));
-    border-color: rgba(0, 153, 255, 0.4);
-    color: var(--primary);
-}
-
-body.light-mode .tool-launch-btn:hover {
-    background: linear-gradient(135deg, rgba(0, 153, 255, 0.18), rgba(0, 204, 102, 0.12));
-    border-color: var(--accent);
-    color: var(--accent);
-}
-
-body.light-mode .tool-status-strip {
-    background: rgba(240, 244, 248, 0.6);
-    border-top-color: rgba(0, 153, 255, 0.12);
-    color: rgba(26, 31, 54, 0.4);
-}
-
-body.light-mode .tools-section .section-subtitle {
-    color: rgba(26, 31, 54, 0.6);
-}
-
-/* ── RESPONSIVE ─────────────────────────── */
-@media (max-width: 768px) {
-    .tools-grid {
-        grid-template-columns: 1fr;
-    }
-    .tool-card {
-        max-width: 480px;
-        margin: 0 auto;
-        width: 100%;
-    }
-}
-
-/* ============================================================
-   Hybrid Engineering Theme — merged from hybrid-theme.css
-   ============================================================ */
-/*
- * ============================================================
- *  ModvWorks / EmbeddedCtrl — Hybrid Engineering Theme
- *  "Engineering Dark" override
- *
- *  HOW TO APPLY
- *  Add one line at the very bottom of style.css:
- *
- *    @import url('hybrid-theme.css');
- *
- *  OR paste the entire contents of this file at the
- *  bottom of style.css directly.
- *
- *  WHAT THIS CHANGES
- *  ─ Nav, Hero (#home), Footer, Tools section → unchanged (stay dark)
- *  ─ All content sections (Projects, Profile, Books, Blog, Contact)
- *    → light background, dark readable text
- *  ─ Accent color (#00c8ff) → unchanged everywhere
- *  ─ Zero layout changes — only color/background/border values
- * ============================================================
- */
-
-/* ── 1. CSS Variable Overrides ─────────────────────────────
-   These redefine the core palette for content zones.
-   Adjust hex values here if your style.css uses different names.
-   ──────────────────────────────────────────────────────────── */
-:root {
-  --eng-bg:           #f4f7fb;   /* page/section background     */
-  --eng-surface:      #ffffff;   /* card / panel surface        */
-  --eng-surface-2:    #eef3f8;   /* secondary surface / alt row */
-  --eng-border:       #d0dcea;   /* card borders, dividers      */
-  --eng-border-soft:  #e2eaf4;   /* subtle separators           */
-  --eng-text-primary: #16202a;   /* headings, strong text       */
-  --eng-text-body:    #2d3d4f;   /* body / paragraph text       */
-  --eng-text-muted:   #5b6773;   /* meta, captions, timestamps  */
-  --eng-accent:       #00c8ff;   /* keep your signature cyan    */
-  --eng-accent-dim:   #0099cc;   /* accent on light bg (darker) */
-  --eng-tag-bg:       #e6f4fb;   /* tag/badge fill on light bg  */
-  --eng-tag-text:     #005f80;   /* tag/badge text              */
-  --eng-success:      #00875a;   /* green accent (dark on light)*/
-}
-
-
-/* ── 2. Content Section Backgrounds ───────────────────────── */
-
-/* Projects, Profile/About, Books, Blog */
-#projects,
-#profile,
-#books,
-#blog,
-#engineering-writing,
-#technical-guides,
-#resources,
-#engineering-science,
-#applied-industrial-electronics,
-#cyber-engineering,
-#systems-engineering {
-  background: var(--eng-bg) !important;
-}
-
-/* Contact section — keep slightly lighter than content */
-#contact {
-  background: var(--eng-surface-2) !important;
-  border-top: 3px solid var(--eng-accent);
-}
-
-
-/* ── 3. Headings & Body Text in Content Sections ─────────── */
-
-#projects h1, #projects h2, #projects h3, #projects h4,
-#profile  h1, #profile  h2, #profile  h3, #profile  h4,
-#books    h1, #books    h2, #books    h3, #books    h4,
-#blog     h1, #blog     h2, #blog     h3, #blog     h4,
-#contact  h1, #contact  h2, #contact  h3, #contact  h4,
-#resources h1, #resources h2, #resources h3 {
-  color: var(--eng-text-primary) !important;
-}
-
-#projects p, #projects li, #projects span,
-#profile  p, #profile  li, #profile  span,
-#books    p, #books    li, #books    span,
-#blog     p, #blog     li, #blog     span,
-#contact  p, #contact  li, #contact  span,
-#resources p, #resources li {
-  color: var(--eng-text-body) !important;
-}
-
-
-/* ── 4. Cards & Panels ────────────────────────────────────── */
-
-/* Project cards */
-#projects .project-card,
-#projects [class*="card"],
-#projects article {
-  background:    var(--eng-surface)  !important;
-  border:        1px solid var(--eng-border) !important;
-  border-radius: 8px !important;
-  box-shadow:    0 1px 4px rgba(0,0,0,0.06) !important;
-}
-
-/* Project card headings */
-#projects .project-card h3,
-#projects [class*="card"] h3 {
-  color: var(--eng-text-primary) !important;
-}
-
-/* Project card body text */
-#projects .project-card p,
-#projects .project-card li,
-#projects [class*="card"] p,
-#projects [class*="card"] li {
-  color: var(--eng-text-body) !important;
-}
-
-/* Blog post cards */
-#blog .blog-card,
-#blog [class*="card"],
-#blog article {
-  background:    var(--eng-surface) !important;
-  border:        1px solid var(--eng-border) !important;
-  border-radius: 8px !important;
-  box-shadow:    0 1px 4px rgba(0,0,0,0.06) !important;
-}
-
-/* Book cards */
-#books .book-card,
-#books [class*="card"] {
-  background:    var(--eng-surface) !important;
-  border:        1px solid var(--eng-border) !important;
-  border-radius: 8px !important;
-}
-
-/* Profile/About panels */
-#profile .profile-card,
-#profile [class*="card"],
-#profile [class*="panel"],
-#profile [class*="box"] {
-  background:    var(--eng-surface) !important;
-  border:        1px solid var(--eng-border) !important;
-  border-radius: 8px !important;
-}
-
-
-/* ── 5. Tags / Badges / Pills ─────────────────────────────── */
-
-/* Tech stack tags on project cards */
-#projects .tag,
-#projects [class*="tag"],
-#projects [class*="badge"],
-#projects [class*="pill"],
-#blog     .tag,
-#blog     [class*="tag"],
-#blog     [class*="badge"] {
-  background:    var(--eng-tag-bg)   !important;
-  color:         var(--eng-tag-text) !important;
-  border:        1px solid #b3d8ec   !important;
-}
-
-/* Keep RTOS / Control Systems category labels readable */
-#projects [class*="category"],
-#blog     [class*="category"] {
-  color: var(--eng-accent-dim) !important;
-}
-
-
-/* ── 6. Timestamps, Meta, Read-time ──────────────────────── */
-
-#blog [class*="date"],
-#blog [class*="meta"],
-#blog [class*="time"],
-#blog time {
-  color: var(--eng-text-muted) !important;
-}
-
-
-/* ── 7. Filter Buttons (Projects section) ─────────────────── */
-
-#projects [class*="filter"] button,
-#projects [class*="filter"] a {
-  background:    var(--eng-surface-2) !important;
-  color:         var(--eng-text-body) !important;
-  border:        1px solid var(--eng-border) !important;
-}
-
-#projects [class*="filter"] button:hover,
-#projects [class*="filter"] button.active {
-  background:    var(--eng-accent)   !important;
-  color:         #0b1e36             !important;
-  border-color:  var(--eng-accent)   !important;
-}
-
-
-/* ── 8. Accent Color on Light Background ─────────────────── */
-/* On light bg, full #00c8ff is too pale — use slightly darker */
-
-#projects a,
-#profile  a,
-#books    a,
-#blog     a,
-#contact  a {
-  color: var(--eng-accent-dim) !important;
-}
-
-#projects a:hover,
-#profile  a:hover,
-#blog     a:hover {
-  color: var(--eng-accent) !important;
-}
-
-
-/* ── 9. Section Dividers & Borders ───────────────────────── */
-
-#projects,
-#profile,
-#books,
-#blog {
-  border-top: 1px solid var(--eng-border-soft) !important;
-}
-
+@import url('hybrid-theme.css');
 
-/* ── 10. Contact Form Inputs ─────────────────────────────── */
-
-#contact input,
-#contact textarea,
-#contact select {
-  background:    var(--eng-surface)  !important;
-  border:        1px solid var(--eng-border) !important;
-  color:         var(--eng-text-primary) !important;
-  border-radius: 6px !important;
-}
-
-#contact input::placeholder,
-#contact textarea::placeholder {
-  color: var(--eng-text-muted) !important;
-}
-
-#contact input:focus,
-#contact textarea:focus {
-  border-color: var(--eng-accent) !important;
-  outline:      none !important;
-  box-shadow:   0 0 0 3px rgba(0,200,255,0.15) !important;
-}
-
-
-/* ── 11. Contact Info Blocks ─────────────────────────────── */
-
-#contact [class*="info"],
-#contact [class*="detail"],
-#contact [class*="item"] {
-  color: var(--eng-text-body) !important;
-}
-
-#contact strong,
-#contact b {
-  color: var(--eng-text-primary) !important;
-}
-
-
-/* ── 12. Hero Bottom Border (anchors dark→light transition) ─ */
-/* Adds a 3px cyan line under the hero to signal the shift      */
-
-#home {
-  border-bottom: 3px solid var(--eng-accent) !important;
-}
-
-
-/* ── 13. Tools Section — keep dark, reinforce border ─────── */
-/* The interactive lab section stays in your dark theme         */
-
-section.tools,
-#tools,
-[id*="tools"],
-[class*="tools-section"] {
-  border-top:    3px solid var(--eng-accent) !important;
-  border-bottom: 3px solid var(--eng-accent) !important;
-}
-
-
-/* ── 14. Scrollbar (content zones, Webkit) ───────────────── */
-
-#projects::-webkit-scrollbar-track,
-#blog::-webkit-scrollbar-track {
-  background: var(--eng-bg);
-}
-
-
-/* ── 15. Print-safe fallback ─────────────────────────────── */
-
-@media print {
-  #projects, #profile, #books, #blog, #contact {
-    background: white !important;
-    color: black !important;
-  }
-}

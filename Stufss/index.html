@@ -6,6 +6,8 @@
     <title>ModvWorks | Building Intelligent Control Systems</title>
     <meta name="description"content="Building Intelligent Control Systems through Practical Systems Engineering for Real Products. Embedded systems, control engineering, RTOS, industrial automation, and engineering tools.">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tools-section.css">
+    <link rel="stylesheet" href="nav-changes.css">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='bgGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%230a0e27;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%231a2448;stop-opacity:1' /%3E%3C/linearGradient%3E%3ClinearGradient id='ctrlGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2300d4ff;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%2300ff88;stop-opacity:1' /%3E%3C/linearGradient%3E%3Cfilter id='glow'%3E%3CfeGaussianBlur stdDeviation='1' result='coloredBlur'/%3E%3CfeMerge%3E%3CfeMergeNode in='coloredBlur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='32' fill='url(%23bgGrad)'/%3E%3Ccircle cx='18' cy='32' r='5' stroke='%2300d4ff' stroke-width='2' fill='none' filter='url(%23glow)'/%3E%3Cline x1='16' y1='32' x2='20' y2='32' stroke='%2300d4ff' stroke-width='1.5'/%3E%3Cline x1='18' y1='30' x2='18' y2='34' stroke='%2300d4ff' stroke-width='1.5'/%3E%3Crect x='28' y='26' width='14' height='12' fill='url(%23ctrlGrad)' filter='url(%23glow)'/%3E%3Ctext x='35' y='34' font-size='8' font-weight='bold' text-anchor='middle' fill='%230a0e27'%3EPID%3C/text%3E%3Crect x='48' y='28' width='10' height='8' stroke='%2300ff88' stroke-width='2' fill='none' filter='url(%23glow)'/%3E%3Cpath d='M 8 32 L 13 32' stroke='%2300d4ff' stroke-width='2' fill='none'/%3E%3Cpath d='M 13 32 L 11 30 M 13 32 L 11 34' stroke='%2300d4ff' stroke-width='1.5' fill='none'/%3E%3Cpath d='M 23 32 L 28 32' stroke='%2300d4ff' stroke-width='2' fill='none'/%3E%3Cpath d='M 42 32 L 48 32' stroke='%2300ff88' stroke-width='2' fill='none'/%3E%3Cpath d='M 58 32 L 60 32' stroke='%2300ff88' stroke-width='2' fill='none'/%3E%3Cpath d='M 58 32 L 58 45 L 18 45 L 18 37' stroke='%2300d4ff' stroke-width='1.5' fill='none' stroke-dasharray='2,1' opacity='0.8'/%3E%3Cpath d='M 18 37 L 16 39 M 18 37 L 20 39' stroke='%2300d4ff' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='8' cy='32' r='2' fill='%2300ff88'/%3E%3C/svg%3E">
 </head>
 <body>
@@ -62,156 +64,188 @@ STEP 4 — In script.js, find the console.log lines at the bottom
         <li><a href="#projects">Projects</a></li>
 
         
-        <!-- Products & Services (replaces "Ventures") -->
-        <li class="dropdown">
+        <!-- Products & Services (mega-menu) -->
+        <li class="dropdown mega">
             <a href="#entrepreneurship" class="dropdown-toggle">Products &amp; Services</a>
-            <div class="dropdown-menu dropdown-menu--wide">
-                <div class="dropdown-group-label">Products</div>
-                <a href="#firmware-kits" class="dropdown-item-icon">
-                    <span class="di-icon">⚡</span>
-                    <span class="di-text">
-                        <strong>Firmware Kits</strong>
-                        <em>Ready-to-deploy embedded packages</em>
-                    </span>
-                </a>
-                <a href="#iot-nodes" class="dropdown-item-icon">
-                    <span class="di-icon">📡</span>
-                    <span class="di-text">
-                        <strong>IoT Nodes</strong>
-                        <em>Hardware-ready sensor & control nodes</em>
-                    </span>
-                </a>
-                <a href="#tools" class="dropdown-item-icon">
-                    <span class="di-icon">🔬</span>
-                    <span class="di-text">
-                        <strong>Tools</strong>
-                        <em>Interactive engineering simulators</em>
-                    </span>
-                </a>
-                <div class="dropdown-divider"></div>
-                <div class="dropdown-group-label">Services</div>
-                <a href="#micro-consulting" class="dropdown-item-icon">
-                    <span class="di-icon">🧠</span>
-                    <span class="di-text">
-                        <strong>Micro Consulting</strong>
-                        <em>Focused technical sessions, on demand</em>
-                    </span>
-                </a>
+            <div class="mega-menu">
+                <div class="mega-sidebar">
+                    <div class="mega-sidebar-item active">Products</div>
+                    <div class="mega-sidebar-item">Services</div>
+                </div>
+                <div class="mega-content">
+                    <div class="mega-column">
+                        <div class="mega-column-title">Products</div>
+                        <a href="#firmware-kits" class="mega-item">
+                            <span class="mega-item-icon">⚡</span>
+                            <span class="mega-item-text">
+                                <strong>Firmware Kits</strong>
+                                <span class="mega-item-desc">Ready-to-deploy embedded packages</span>
+                            </span>
+                        </a>
+                        <a href="#iot-nodes" class="mega-item">
+                            <span class="mega-item-icon">📡</span>
+                            <span class="mega-item-text">
+                                <strong>IoT Nodes</strong>
+                                <span class="mega-item-desc">Hardware-ready sensor & control nodes</span>
+                            </span>
+                        </a>
+                        <a href="#tools" class="mega-item">
+                            <span class="mega-item-icon">🔬</span>
+                            <span class="mega-item-text">
+                                <strong>Tools</strong>
+                                <span class="mega-item-desc">Interactive engineering simulators</span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="mega-column">
+                        <div class="mega-column-title">Services</div>
+                        <a href="#micro-consulting" class="mega-item">
+                            <span class="mega-item-icon">🧠</span>
+                            <span class="mega-item-text">
+                                <strong>Micro Consulting</strong>
+                                <span class="mega-item-desc">Focused technical sessions, on demand</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </li>
 
-        <!-- Content (replaces standalone "Blog") -->
-        <li class="dropdown">
+        <!-- Content (mega-menu) -->
+        <li class="dropdown mega">
             <a href="#blog" class="dropdown-toggle">Content</a>
-            <div class="dropdown-menu dropdown-menu--wide">
-                <div class="dropdown-group-label">Publishing</div>
-                <a href="#blog" class="dropdown-item-icon">
-                    <span class="di-icon">✍️</span>
-                    <span class="di-text">
-                        <strong>Blog</strong>
-                        <em>Technical deep-dives & commentary</em>
-                    </span>
-                </a>
-                <a href="#engineering-writing" class="dropdown-item-icon">
-                    <span class="di-icon">📄</span>
-                    <span class="di-text">
-                        <strong>Engineering Writing</strong>
-                        <em>Long-form articles & whitepapers</em>
-                    </span>
-                </a>
-                <a href="#technical-guides" class="dropdown-item-icon">
-                    <span class="di-icon">📘</span>
-                    <span class="di-text">
-                        <strong>Technical Guides</strong>
-                        <em>Step-by-step implementation guides</em>
-                    </span>
-                </a>
+            <div class="mega-menu">
+                <div class="mega-sidebar">
+                    <div class="mega-sidebar-item active">Publishing</div>
+                </div>
+                <div class="mega-content">
+                    <div class="mega-column">
+                        <div class="mega-column-title">Publishing</div>
+                        <a href="#blog" class="mega-item">
+                            <span class="mega-item-icon">✍️</span>
+                            <span class="mega-item-text">
+                                <strong>Blog</strong>
+                                <span class="mega-item-desc">Technical deep-dives & commentary</span>
+                            </span>
+                        </a>
+                        <a href="#engineering-writing" class="mega-item">
+                            <span class="mega-item-icon">📄</span>
+                            <span class="mega-item-text">
+                                <strong>Engineering Writing</strong>
+                                <span class="mega-item-desc">Long-form articles & whitepapers</span>
+                            </span>
+                        </a>
+                        <a href="#technical-guides" class="mega-item">
+                            <span class="mega-item-icon">📘</span>
+                            <span class="mega-item-text">
+                                <strong>Technical Guides</strong>
+                                <span class="mega-item-desc">Step-by-step implementation guides</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </li>
 
         
-        <!-- Resources -->
-        <li class="dropdown">
+        <!-- Resources (mega-menu) -->
+        <li class="dropdown mega">
             <a href="#resources" class="dropdown-toggle">Resources</a>
-            <div class="dropdown-menu dropdown-menu--wide">
-                <a href="#engineering-science" class="dropdown-item-icon">
-                    <span class="di-icon">🔭</span>
-                    <span class="di-text">
-                        <strong>Engineering Science</strong>
-                        <em>Foundational principles & theory</em>
-                    </span>
-                </a>
-                <a href="#applied-industrial-electronics" class="dropdown-item-icon">
-                    <span class="di-icon">🔌</span>
-                    <span class="di-text">
-                        <strong>Applied Industrial Electronics</strong>
-                        <em>Hardware & power systems in practice</em>
-                    </span>
-                </a>
-                <a href="#cyber-engineering" class="dropdown-item-icon">
-                    <span class="di-icon">🛰️</span>
-                    <span class="di-text">
-                        <strong>Cyber Physical Systems</strong>
-                        <em>Where computation meets the physical world</em>
-                    </span>
-                </a>
-                <a href="#systems-engineering" class="dropdown-item-icon">
-                    <span class="di-icon">⚙️</span>
-                    <span class="di-text">
-                        <strong>Systems Engineering</strong>
-                        <em>Design, integration & lifecycle thinking</em>
-                    </span>
-                </a>
-                <a href="#technology" class="dropdown-item-icon">
-                    <span class="di-icon">💡</span>
-                    <span class="di-text">
-                        <strong>Technology</strong>
-                        <em>Trends & tools across the field</em>
-                    </span>
-                </a>
+            <div class="mega-menu">
+                <div class="mega-sidebar">
+                    <div class="mega-sidebar-item active">Topics</div>
+                </div>
+                <div class="mega-content">
+                    <div class="mega-column">
+                        <div class="mega-column-title">Topics</div>
+                        <a href="#engineering-science" class="mega-item">
+                            <span class="mega-item-icon">🔭</span>
+                            <span class="mega-item-text">
+                                <strong>Engineering Science</strong>
+                                <span class="mega-item-desc">Foundational principles & theory</span>
+                            </span>
+                        </a>
+                        <a href="#applied-industrial-electronics" class="mega-item">
+                            <span class="mega-item-icon">🔌</span>
+                            <span class="mega-item-text">
+                                <strong>Applied Industrial Electronics</strong>
+                                <span class="mega-item-desc">Hardware & power systems in practice</span>
+                            </span>
+                        </a>
+                        <a href="#cyber-engineering" class="mega-item">
+                            <span class="mega-item-icon">🛰️</span>
+                            <span class="mega-item-text">
+                                <strong>Cyber Physical Systems</strong>
+                                <span class="mega-item-desc">Where computation meets the physical world</span>
+                            </span>
+                        </a>
+                        <a href="#systems-engineering" class="mega-item">
+                            <span class="mega-item-icon">⚙️</span>
+                            <span class="mega-item-text">
+                                <strong>Systems Engineering</strong>
+                                <span class="mega-item-desc">Design, integration & lifecycle thinking</span>
+                            </span>
+                        </a>
+                        <a href="#technology" class="mega-item">
+                            <span class="mega-item-icon">💡</span>
+                            <span class="mega-item-text">
+                                <strong>Technology</strong>
+                                <span class="mega-item-desc">Trends & tools across the field</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </li>
         
 
-        <!-- Books -->
-        <li class="dropdown">
+        <!-- Books (mega-menu) -->
+        <li class="dropdown mega">
             <a href="#books" class="dropdown-toggle">Books</a>
-            <div class="dropdown-menu dropdown-menu--wide">
-                <a href="#fiction" class="dropdown-item-icon">
-                    <span class="di-icon">📖</span>
-                    <span class="di-text">
-                        <strong>Fiction</strong>
-                        <em>Stories worth getting lost in</em>
-                    </span>
-                </a>
-                <a href="#nonfiction" class="dropdown-item-icon">
-                    <span class="di-icon">📚</span>
-                    <span class="di-text">
-                        <strong>Non-Fiction</strong>
-                        <em>Ideas, history & real-world insight</em>
-                    </span>
-                </a>
-                <a href="#science" class="dropdown-item-icon">
-                    <span class="di-icon">🧪</span>
-                    <span class="di-text">
-                        <strong>Science</strong>
-                        <em>Physics, math & the natural world</em>
-                    </span>
-                </a>
-                <a href="#engineering" class="dropdown-item-icon">
-                    <span class="di-icon">🛠️</span>
-                    <span class="di-text">
-                        <strong>Engineering</strong>
-                        <em>Design, systems & applied practice</em>
-                    </span>
-                </a>
-                <a href="#technology" class="dropdown-item-icon">
-                    <span class="di-icon">💻</span>
-                    <span class="di-text">
-                        <strong>Technology</strong>
-                        <em>Computing, software & emerging tech</em>
-                    </span>
-                </a>
+            <div class="mega-menu">
+                <div class="mega-sidebar">
+                    <div class="mega-sidebar-item active">Categories</div>
+                </div>
+                <div class="mega-content">
+                    <div class="mega-column">
+                        <div class="mega-column-title">Categories</div>
+                        <a href="#fiction" class="mega-item">
+                            <span class="mega-item-icon">📖</span>
+                            <span class="mega-item-text">
+                                <strong>Fiction</strong>
+                                <span class="mega-item-desc">Stories worth getting lost in</span>
+                            </span>
+                        </a>
+                        <a href="#nonfiction" class="mega-item">
+                            <span class="mega-item-icon">📚</span>
+                            <span class="mega-item-text">
+                                <strong>Non-Fiction</strong>
+                                <span class="mega-item-desc">Ideas, history & real-world insight</span>
+                            </span>
+                        </a>
+                        <a href="#science" class="mega-item">
+                            <span class="mega-item-icon">🧪</span>
+                            <span class="mega-item-text">
+                                <strong>Science</strong>
+                                <span class="mega-item-desc">Physics, math & the natural world</span>
+                            </span>
+                        </a>
+                        <a href="#engineering" class="mega-item">
+                            <span class="mega-item-icon">🛠️</span>
+                            <span class="mega-item-text">
+                                <strong>Engineering</strong>
+                                <span class="mega-item-desc">Design, systems & applied practice</span>
+                            </span>
+                        </a>
+                        <a href="#technology" class="mega-item">
+                            <span class="mega-item-icon">💻</span>
+                            <span class="mega-item-text">
+                                <strong>Technology</strong>
+                                <span class="mega-item-desc">Computing, software & emerging tech</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </li>
 
