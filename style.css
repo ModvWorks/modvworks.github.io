@@ -356,9 +356,9 @@ body.light-mode .theme-toggle {
 .hero {
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    padding: 6rem 5% 2rem;
+    padding: 8rem 5% 2rem;
     position: relative;
 }
 
