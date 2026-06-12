@@ -249,8 +249,10 @@ body.light-mode .theme-toggle {
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 1.2rem;
     list-style: none;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 .nav-links > li {
@@ -264,7 +266,7 @@ body.light-mode .theme-toggle {
     position: relative;
     font-weight: 500;
     letter-spacing: 0.5px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     display: block;
     padding: 0.5rem 0;
 }
@@ -347,6 +349,163 @@ body.light-mode .theme-toggle {
     border-left-color: var(--primary);
     color: var(--primary);
     padding-left: 2rem;
+}
+
+/* ============================================
+   Mega Menu (Siemens-style: sidebar + content)
+   ============================================ */
+.mega {
+    position: relative;
+}
+
+.mega-menu {
+    position: fixed;
+    top: var(--nav-height, 72px);
+    left: 0;
+    right: 0;
+    width: 100%;
+    display: flex;
+    background: rgba(10, 14, 39, 0.98);
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(0, 212, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    z-index: 999;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.mega:hover .mega-menu,
+.mega-menu:hover {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.mega-sidebar {
+    flex: 0 0 240px;
+    padding: 2rem 1.5rem;
+    border-right: 1px solid rgba(0, 212, 255, 0.15);
+}
+
+.mega-sidebar-item {
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    color: var(--light);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.mega-sidebar-item.active,
+.mega-sidebar-item:hover {
+    background: rgba(0, 212, 255, 0.08);
+    color: var(--primary);
+    border-left-color: var(--primary);
+}
+
+.mega-content {
+    flex: 1;
+    display: flex;
+    gap: 2.5rem;
+    padding: 2rem 2.5rem;
+    flex-wrap: wrap;
+}
+
+.mega-column {
+    flex: 1 1 280px;
+    min-width: 240px;
+}
+
+.mega-column-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.mega-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+    padding: 0.75rem 0.5rem;
+    border-radius: 8px;
+    color: var(--light);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.mega-item:hover {
+    background: rgba(0, 212, 255, 0.08);
+    border-left-color: var(--primary);
+    padding-left: 1rem;
+}
+
+.mega-item-icon {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    flex-shrink: 0;
+}
+
+.mega-item-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.mega-item-text strong {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--light);
+}
+
+.mega-item:hover .mega-item-text strong {
+    color: var(--primary);
+}
+
+.mega-item-desc {
+    font-size: 0.8rem;
+    color: rgba(232, 244, 248, 0.6);
+    line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+    .mega-menu {
+        position: static;
+        flex-direction: column;
+        max-height: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        box-shadow: none;
+    }
+
+    .mega:hover .mega-menu {
+        display: flex;
+    }
+
+    .mega-sidebar {
+        flex: none;
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 212, 255, 0.15);
+    }
+
+    .mega-content {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
 }
 
 /* Hero Section */
