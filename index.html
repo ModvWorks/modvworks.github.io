@@ -6,6 +6,8 @@
     <title>ModvWorks | Building Intelligent Control Systems</title>
     <meta name="description"content="Building Intelligent Control Systems through Practical Systems Engineering for Real Products. Embedded systems, control engineering, RTOS, industrial automation, and engineering tools.">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tools-section.css">
+    <link rel="stylesheet" href="nav-changes.css">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='bgGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%230a0e27;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%231a2448;stop-opacity:1' /%3E%3C/linearGradient%3E%3ClinearGradient id='ctrlGrad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2300d4ff;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%2300ff88;stop-opacity:1' /%3E%3C/linearGradient%3E%3Cfilter id='glow'%3E%3CfeGaussianBlur stdDeviation='1' result='coloredBlur'/%3E%3CfeMerge%3E%3CfeMergeNode in='coloredBlur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Ccircle cx='32' cy='32' r='32' fill='url(%23bgGrad)'/%3E%3Ccircle cx='18' cy='32' r='5' stroke='%2300d4ff' stroke-width='2' fill='none' filter='url(%23glow)'/%3E%3Cline x1='16' y1='32' x2='20' y2='32' stroke='%2300d4ff' stroke-width='1.5'/%3E%3Cline x1='18' y1='30' x2='18' y2='34' stroke='%2300d4ff' stroke-width='1.5'/%3E%3Crect x='28' y='26' width='14' height='12' fill='url(%23ctrlGrad)' filter='url(%23glow)'/%3E%3Ctext x='35' y='34' font-size='8' font-weight='bold' text-anchor='middle' fill='%230a0e27'%3EPID%3C/text%3E%3Crect x='48' y='28' width='10' height='8' stroke='%2300ff88' stroke-width='2' fill='none' filter='url(%23glow)'/%3E%3Cpath d='M 8 32 L 13 32' stroke='%2300d4ff' stroke-width='2' fill='none'/%3E%3Cpath d='M 13 32 L 11 30 M 13 32 L 11 34' stroke='%2300d4ff' stroke-width='1.5' fill='none'/%3E%3Cpath d='M 23 32 L 28 32' stroke='%2300d4ff' stroke-width='2' fill='none'/%3E%3Cpath d='M 42 32 L 48 32' stroke='%2300ff88' stroke-width='2' fill='none'/%3E%3Cpath d='M 58 32 L 60 32' stroke='%2300ff88' stroke-width='2' fill='none'/%3E%3Cpath d='M 58 32 L 58 45 L 18 45 L 18 37' stroke='%2300d4ff' stroke-width='1.5' fill='none' stroke-dasharray='2,1' opacity='0.8'/%3E%3Cpath d='M 18 37 L 16 39 M 18 37 L 20 39' stroke='%2300d4ff' stroke-width='1.5' fill='none'/%3E%3Ccircle cx='8' cy='32' r='2' fill='%2300ff88'/%3E%3C/svg%3E">
 </head>
 <body>
@@ -408,6 +410,196 @@ STEP 4 — In script.js, find the console.log lines at the bottom
                         <div class="project-links">
                             <a href="#" class="project-link">📄 Details</a>
                             <a href="#" class="project-link">📐 Diagram</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================
+                 NEW: Recent Projects (last few months)
+                 ============================================ -->
+
+            <div class="project-card-large" data-category="control">
+                <div class="project-split">
+                    <div class="project-visual">
+                        <div class="project-icon-large">📊</div>
+                        <div class="project-tech-visual">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">PID/EKF/LQR/MPC</span>
+                            <span class="tech-badge">System ID</span>
+                            <span class="tech-badge">C99 Codegen</span>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-category">Control Systems</span>
+                        <h3>CtrlStudio — Browser-Based Control Engineering Lab</h3>
+                        <p class="project-description">
+                            A self-contained control systems laboratory built for the browser, covering tuning, estimation, and code generation in a single numerical engine.
+                        </p>
+                        <ul class="project-highlights">
+                            <li>PID tuning, EKF, LQR, LQG, and MPC design workflows</li>
+                            <li>MIMO analysis and classical system identification tools</li>
+                            <li>Embedded C99 code generation targeting STM32/FreeRTOS</li>
+                            <li>Interactive plots for step response, Bode, Nyquist, and root locus</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#" class="project-link">📄 Details</a>
+                            <a href="#" class="project-link">🔬 Launch Tool</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card-large" data-category="rtos">
+                <div class="project-split">
+                    <div class="project-visual">
+                        <div class="project-icon-large">📘</div>
+                        <div class="project-tech-visual">
+                            <span class="tech-badge">FreeRTOS</span>
+                            <span class="tech-badge">STM32</span>
+                            <span class="tech-badge">Automotive</span>
+                            <span class="tech-badge">Aerospace</span>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-category">RTOS</span>
+                        <h3>FreeRTOS Tutorial Series — 100+ Industry Applications</h3>
+                        <p class="project-description">
+                            A major tutorial series mapping FreeRTOS concepts to real-world deployments across automotive, aerospace, medical, industrial, and IoT domains.
+                        </p>
+                        <ul class="project-highlights">
+                            <li>100+ worked applications spanning five major industries</li>
+                            <li>Task scheduling, synchronization, and ISR-safe patterns</li>
+                            <li>Paired with a comprehensive embedded C foundations curriculum</li>
+                            <li>Covers pointers, memory layout, DMA, and UART driver capstone</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#" class="project-link">📄 Read Series</a>
+                            <a href="#" class="project-link">💻 Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card-large" data-category="control">
+                <div class="project-split">
+                    <div class="project-visual">
+                        <div class="project-icon-large">🤖</div>
+                        <div class="project-tech-visual">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Anthropic API</span>
+                            <span class="tech-badge">Streaming</span>
+                            <span class="tech-badge">Full-Stack</span>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-category">Tools</span>
+                        <h3>EKD — Engineering Knowledge Distiller</h3>
+                        <p class="project-description">
+                            A full-stack React application that streams AI-powered summaries and explanations of complex engineering material via the Anthropic API.
+                        </p>
+                        <ul class="project-highlights">
+                            <li>Real-time streaming responses for technical Q&A</li>
+                            <li>Built as a reusable engine for distilling dense reference material</li>
+                            <li>Designed as a monetizable standalone product</li>
+                            <li>Clean React front end with a lightweight API integration layer</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#" class="project-link">📄 Details</a>
+                            <a href="#" class="project-link">🔬 Launch Tool</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card-large" data-category="control">
+                <div class="project-split">
+                    <div class="project-visual">
+                        <div class="project-icon-large">🧰</div>
+                        <div class="project-tech-visual">
+                            <span class="tech-badge">FSM Generator</span>
+                            <span class="tech-badge">PID Tuner</span>
+                            <span class="tech-badge">CLI Scaffolding</span>
+                            <span class="tech-badge">STM32 HAL</span>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-category">Tools</span>
+                        <h3>Embedded Tooling Suite — FSM, PID & Scaffolding</h3>
+                        <p class="project-description">
+                            A set of monetizable developer tools that automate common embedded firmware tasks, from state machine generation to project scaffolding.
+                        </p>
+                        <ul class="project-highlights">
+                            <li>FSM Generator producing C and IEC 61131-3 Structured Text</li>
+                            <li>PID Tuner web app with interactive simulation dashboard</li>
+                            <li>Embedded code scaffolding CLI for rapid STM32 project setup</li>
+                            <li>Designed for direct integration into firmware workflows</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#" class="project-link">📄 Details</a>
+                            <a href="#" class="project-link">💻 Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card-large" data-category="plc">
+                <div class="project-split">
+                    <div class="project-visual">
+                        <div class="project-icon-large">🔗</div>
+                        <div class="project-tech-visual">
+                            <span class="tech-badge">OPC-UA</span>
+                            <span class="tech-badge">SCADA/ICS</span>
+                            <span class="tech-badge">IT/OT</span>
+                            <span class="tech-badge">Cybersecurity</span>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-category">PLC/Automation</span>
+                        <h3>OPC-UA & Industrial Data Pipelines Course</h3>
+                        <p class="project-description">
+                            A complete course outline bridging IT and OT systems, covering OPC-UA fundamentals, industrial data pipelines, and ICS/SCADA security.
+                        </p>
+                        <ul class="project-highlights">
+                            <li>Branded course package with structured curriculum and pricing</li>
+                            <li>"Industrial Data Pipelines" positioned as the flagship first course</li>
+                            <li>Cybersecurity for ICS/SCADA identified as the highest-ticket offering</li>
+                            <li>Part of a broader IT/OT convergence education strategy</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#" class="project-link">📄 Details</a>
+                            <a href="#" class="project-link">📘 Course Outline</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card-large" data-category="rtos">
+                <div class="project-split">
+                    <div class="project-visual">
+                        <div class="project-icon-large">🔄</div>
+                        <div class="project-tech-visual">
+                            <span class="tech-badge">FSM</span>
+                            <span class="tech-badge">STM32 HAL</span>
+                            <span class="tech-badge">SVG Diagrams</span>
+                            <span class="tech-badge">C</span>
+                        </div>
+                    </div>
+                    <div class="project-details">
+                        <span class="project-category">RTOS</span>
+                        <h3>Production-Grade FSMs on STM32 — Ebook & Reference</h3>
+                        <p class="project-description">
+                            A production-grade ebook on finite state machines for embedded systems, paired with a 21-application reference covering diagrams and C code.
+                        </p>
+                        <ul class="project-highlights">
+                            <li>Delivered as both DOCX and PDF for flexible distribution</li>
+                            <li>21 worked FSM applications with SVG state diagrams</li>
+                            <li>Companion implementations in STM32 HAL C and IEC 61131-3 ST</li>
+                            <li>Includes a 4-way traffic light FSM across multiple targets</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="#" class="project-link">📄 Read Ebook</a>
+                            <a href="#" class="project-link">💻 Code</a>
                         </div>
                     </div>
                 </div>
