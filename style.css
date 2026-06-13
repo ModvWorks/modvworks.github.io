@@ -750,8 +750,9 @@ body.light-mode .theme-toggle {
 .about-content {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 4rem;
-    align-items: center;
+    grid-template-rows: auto auto auto;
+    gap: 3rem 4rem;
+    align-items: start;
     opacity: 0;
     transform: translateY(30px);
 }
@@ -1236,12 +1237,7 @@ footer p {
 }
 
 /* Philosophy Section Styles */
-.about-philosophy {
-    grid-column: 1 / -1;
-    margin-top: 3rem;
-    padding-top: 3rem;
-    border-top: 1px solid rgba(0, 212, 255, 0.2);
-}
+/* .about-philosophy wrapper removed — philosophy-section items are now direct grid children of .about-content */
 
 .philosophy-section {
     margin-bottom: 2.5rem;
@@ -1377,12 +1373,18 @@ body.light-mode .philosophy-section {
     .principles-grid {
         grid-template-columns: 1fr;
     }
-} 
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 /* Education Section Styles */
 .education-section {
-    margin-top: 2.5rem;
-    padding-top: 2rem;
 }
 
 .education-subtitle {
